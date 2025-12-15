@@ -19,9 +19,9 @@ export default async function getUsers() {
   return data;
 }
 
-export async function getUser(id: number | string) {
+export async function getUser(userId: number | string) {
   await wait(2000);
-  const res = await fetch(`${process.env.API_URL}/users/${id}`);
+  const res = await fetch(`${process.env.API_URL}/users/${userId}`);
   const data: user = await res.json();
   return data;
 }

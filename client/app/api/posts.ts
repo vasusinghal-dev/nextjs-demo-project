@@ -11,9 +11,9 @@ export default async function getPosts() {
   const data: post[] = await res.json();
   return data;
 }
-export async function getPost(id: number | string) {
+export async function getPost(postId: number | string) {
   await wait(2000);
-  const res = await fetch(`${process.env.API_URL}/posts/${id}`);
+  const res = await fetch(`${process.env.API_URL}/posts/${postId}`);
   const data: post = await res.json();
   return data;
 }
