@@ -24,35 +24,45 @@ It focuses on understanding how modern Next.js works under the hood.
 ## 🗂️ Project Structure (Simplified)
 
 ```
+api/
+├── db.json
+├── db.example.json
+├── package.json
+├── package-lock.json
+
 app/
 ├── api/
-│   ├── comments.ts        # getComments
-│   ├── posts.ts           # getPosts, getPost(postId), getUserPosts(userId)
-│   ├── todos.ts           # getTodos, getUserTodos(userId)
-│   └── users.ts           # getUsers, getUser(userId)
+│   ├── comments.ts     # getComments
+│   ├── posts.ts        # getPosts, getPost(postId), getUserPosts(userId)
+│   ├── todos.ts        # getTodos, getUserTodos(userId)
+│   └── users.ts        # getUsers, getUser(userId)
 │
 ├── components/
-│   ├── PostCard.tsx       # Post preview card component
-│   ├── TodoItem.tsx       # Single todo item UI
-│   └── Skeleton.tsx       # Shimmer / skeleton loading UI
+│   ├── PostCard.tsx    # Post preview card
+│   ├── Skeleton.tsx    # Loading shimmer UI
+│   └── TodoItem.tsx    # Todo list item
 │
 ├── posts/
-│   ├── page.tsx           # Posts list page
-│   └── [postId]/
-│       └── page.tsx       # Single post page (dynamic route)
+│   ├── [postId]/
+│   │   └── page.tsx    # Single post page (dynamic route)
+│   └── page.tsx        # Posts list
 │
 ├── todos/
-│   └── page.jsx           # Todos list page
+│   └── page.jsx        # Todos list
 │
 ├── users/
-│   ├── page.jsx           # Users list page
 │   ├── [userId]/
-│   │   └── page.tsx       # Single user page (dynamic route)
-│   └── loading.tsx        # Route-level loading state for users
+│   │   └── page.tsx    # Single user page (dynamic route)
+│   ├── page.jsx        # Users list
+│   └── loading.tsx     # Route-level loading state
 │
-├── page.tsx               # Home page (title: "This is next blog app")
-├── layout.tsx             # Root layout with navbar + children
-├── styles.css             # Global styling
+├── page.tsx            # Home page
+│                         (Title: "This is next blog app")
+│
+├── layout.tsx          # Root layout
+│                         (Navbar: MyApp | Posts | Users | Todos)
+│
+└── styles.css          # Global styles
 ```
 
 ---
